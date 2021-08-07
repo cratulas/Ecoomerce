@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  
   devise_for :admins
   root 'categories#index'
   # root to: "home#index"
   authenticate :admin do
     resources :products
     resources :categories
+    resources :variants
   end
-  
+
   devise_for :users
 
 
