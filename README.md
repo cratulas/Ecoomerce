@@ -1,4 +1,4 @@
-1. El diagrama se encuentra en /ecommerce/erd.pdf el cual fue generado a traves de la gema ERD (Se podria mejorar agregando la tabla categories_products la cual no posee modelo por lo que la gema no nos genera esa relacion)
+1. El diagrama se encuentra en /ecommerce/erd1.pdf el cual fue generado a traves de la gema ERD (Se podria mejorar agregando la tabla categories_products la cual no posee modelo por lo que la gema no nos genera esa relacion)
 2. Listo
 3. Listo
 4. La solucion al problema de las categorias es la utilizacion de la gema ancestry la cual nos      permite generar padres e hijos en un mismo modelo guardando la salvedad de no darle dos padres a uno y generando una estructura de arbol puediendo acceder a todos sus ancestros y descendientes (Solo faltaria implementarlo en front-end , la solucion seria guardar el id del padre al momento de generar una categoria)
