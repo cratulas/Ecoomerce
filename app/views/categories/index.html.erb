@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Categories</h1>
-
+<%= render partial: "category", locals: { collection: @categories } %>
 <table>
   <thead>
     <tr>

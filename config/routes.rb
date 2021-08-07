@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
   devise_for :admins
   root 'categories#index'
   # root to: "home#index"
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
     resources :variants
   end
 
-  devise_for :users
+ 
 
 
   
