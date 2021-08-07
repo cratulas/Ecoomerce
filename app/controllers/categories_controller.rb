@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1 or /categories/1.json
   def show
     @categoriesChilds = Category.childs_for_me(category.child_ids)
-    @categoriesParents = Category.childs_for_me(category.ancestor_ids)
+    @categoriesParents = Category.parents_for_me(category.ancestor_ids)
 
   end
 
