@@ -21,6 +21,7 @@ gem 'rails_admin', '~> 2.0'
 gem 'cocoon'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'uuid', '~> 2.3', '>= 2.3.8'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

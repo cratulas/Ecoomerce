@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_07_044653) do
+ActiveRecord::Schema.define(version: 2021_08_07_225319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,30 @@ ActiveRecord::Schema.define(version: 2021_08_07_044653) do
     t.bigint "category_id", null: false
     t.index ["category_id", "product_id"], name: "index_categories_products_on_category_id_and_product_id"
     t.index ["product_id", "category_id"], name: "index_categories_products_on_product_id_and_category_id"
+  end
+
+  create_table "coupons", force: :cascade do |t|
+    t.string "title"
+    t.decimal "discount"
+    t.integer "percent"
+    t.boolean "status"
+    t.uuid "code"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_coupons_on_user_id"
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.string "title"
+    t.decimal "discount"
+    t.integer "percent"
+    t.boolean "status"
+    t.uuid "code"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -116,6 +140,8 @@ ActiveRecord::Schema.define(version: 2021_08_07_044653) do
     t.index ["product_id"], name: "index_variants_on_product_id"
   end
 
+  add_foreign_key "coupons", "users"
+  add_foreign_key "offers", "users"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "users"

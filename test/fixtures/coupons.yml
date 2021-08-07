@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  discount: 9.99
+  percent: 1
+  status: false
+  code: 
+  user: one
+
+two:
+  title: MyString
+  discount: 9.99
+  percent: 1
+  status: false
+  code: 
+  user: two

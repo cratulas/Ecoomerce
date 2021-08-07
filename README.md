@@ -21,5 +21,12 @@
 
 7. No hay
 
-8.  rails g model offer title:string user:references
-    rails g model coupon offer:references code:uuid
+8.  Archivo er2.pdf
+
+    rails g model offer title:string discount:decimal percent:integer status:boolean code:uuid user:references (Cliente especifico)
+
+    rails g model coupon title:string discount:decimal percent:integer status:boolean code:uuid user:references  (Varios clientes)
+
+    Ambos modelos seran iguales, la diferencia sera en el tipo de relacion que tendran estas con el modelo usuario en el caso del cliente especificio sera una relacion de uno a uno (belongs_to) y el caso del de varios clientes sera una relacion uno a muchos.
+
+    Los cupones tendran un nombre , un descuento el cual puede ser un numero exacto o un entero representando un porcentaje, se debera seleccionar uno de los 2 y el que no se ingrese sera por defecto nil para poder identificarlo, ambos tendran el atriburo status el cual sera true en caso de que el cupon este activo o false en caso de que el cupon se encuentre inactivo, en el caso del cupon personal este puede cambiar de estado al cumplirse la condicion inicial que se pide como requerimiento (En el caso de un monto específico, si el cupón es mayor que la compra, el cupón no puede usarse en otra), lo cual se podra determinar a travez de una simple funcion que analice la diferencia entre la compra y el valor del cupon, en el caso del cupon para varios clientes se realizara la misma accion ahora por cada cliente, ademas de poder cambiar el estado del cupon desde una cuenta de administrador cuando el cupon expire
