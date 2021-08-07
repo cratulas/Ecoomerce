@@ -4,10 +4,14 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     @categories = Category.all
+    
   end
 
   # GET /categories/1 or /categories/1.json
   def show
+    @categoriesChilds = Category.childs_for_me(category.child_ids)
+    @categoriesParents = Category.childs_for_me(category.ancestor_ids)
+
   end
 
   # GET /categories/new
